@@ -1,4 +1,4 @@
-#  AppWebseite Lauftreff Sempach
+#  Webseite Lauftreff Sempach
 Vereins-Webseite für den den Lauftreff in Sempach unter Verwendung von Node.js, Express und Socket.io 
 
 ## Anwendung
