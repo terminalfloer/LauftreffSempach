@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #f1f1f1;
+    float: left;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px;
+  }
+  
+  .sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .content {
+    margin-left: 200px;
+    padding: 20px;
+  }
+  
