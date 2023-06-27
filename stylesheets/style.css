@@ -1,32 +1,78 @@
 body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .sidebar {
-    width: 200px;
-    height: 100vh;
-    background-color: #f1f1f1;
-    float: left;
-  }
-  
-  .sidebar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    padding: 10px;
-  }
-  
-  .sidebar ul li a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .content {
-    margin-left: 200px;
-    padding: 20px;
-  }
-  
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1,
+p {
+  display: none;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+}
+
+.sidebar {
+  width: 200px;
+  height: 50vh;
+  background-color: #f1f1f1;
+  float: left;
+  transition: margin-left 0.3s ease; /* Animationsübergang hinzufügen */
+  margin-left: -200px; /* Sidebar standardmäßig ausgeblendet */
+}
+
+.sidebar.open {
+  margin-left: 0; /* Sidebar einblenden */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.sidebar ul li {
+  padding: 10px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.content {
+  margin-left: 0; /* Keinen Abstand zum Rand der Sidebar */
+  padding: 20px;
+}
+
+.hamburger {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px;
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger-icon,
+.close-icon {
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+.close-icon {
+  opacity: 0; /* Verstecke das X-Symbol standardmäßig */
+}
+
+.sidebar.open .hamburger-icon {
+  opacity: 0; /* Verstecke das Hamburger-Symbol, wenn die Sidebar geöffnet ist */
+}
+
+.sidebar.open .close-icon {
+  opacity: 1; /* Zeige das X-Symbol, wenn die Sidebar geöffnet ist */
+}
