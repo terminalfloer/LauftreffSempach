@@ -57,11 +57,23 @@ p {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-container {
+  position: relative;
+  width: 20px;
+  height: 20px;
 }
 
 .hamburger-icon,
 .close-icon {
   display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: opacity 0.3s ease;
 }
 
