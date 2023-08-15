@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <title>Lauftreff Sempach</title>
-  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-  <script src="javascripts/main.js"></script>
+	<meta charset="UTF-8">
+	<title>Lauftreff Sempach</title>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
-
 <body>
-  <img src="img\logo2.jpg" alt="Lauftreff" class="logo">
-  <h1>Lauftreff Sempach</h1>
-  <p>Für alle offen!</p>
-  <hr>
-  <div class="sidebar">
-    <button class="hamburger" onclick="toggleSidebar()">
-      <span class="icon-container"></span>
-        <span class="hamburger-icon">&#9776;</span>
-        <span class="close-icon">&#10005;</span>
-      </span>
-    </button>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="news.html">News</a></li>
-      <li><a href="termine.html">Termine</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="gaestebuch.html">Gästebuch</a></li>
-    </ul>
-  </div>
-
-  <div class="slideshow">
-    <img src="img/slideshow/image1.jpg" alt="Bild 1" class="slide">
-    <img src="img/slideshow/image2.jpg" alt="Bild 2" class="slide">
-    <img src="img/slideshow/image3.jpg" alt="Bild 3" class="slide">
-    <img src="img/slideshow/image4.jpg" alt="Bild 4" class="slide">
-  </div>
-
-  <div class="content">
-    <!-- Hier kommt der Inhalt der jeweiligen Unterseiten -->
-  </div>
+	<div id="container">
+	<div id="kopfleiste">
+		<h1>Lauftreff Sempach - gemeinsam laufen!</h1>
+	</div>
+	
+	<div id="menu">
+		<ul>
+			<li class="current">ÜBER UNS</li>
+			<li><a href="news.html">NEWS</a></li>
+			<li><a href="termine.html">TERMINE</a></li>
+			<li><a href="team.html">TEAM</a></li>
+			<li><a href="bilder.html">BILDER</a></li>
+			<li><a href="gaestebuch.html">GÄSTEBUCH</a></li>
+			<li><a href="kontakt.html">KONTAKT & IMPRESSUM</a></li>
+		</ul>
+	</div>
+	
+	<div id="inhalt">
+		<h2>Über uns</h2>
+		<img src="bilder/img1.png" alt="Ort" width="150" height="150">
+		<img src="bilder/img2.png" alt="Region" width="150" height="150">
+		<img src="bilder/img3.png" alt="Kleingruppe" width="150" height="150">
+		<img src="bilder/img4.png" alt="Laufgruppe" width="150" height="150">
+		<p>Ob Sie eine hartnäckige Erkältung plagt oder Sie eine schwere Krankheit haben – wir kümmern uns um Sie. <strong>Dr. Bloemkamp</strong> und sein Praxisteam sorgen dafür, dass Sie so schnell wie möglich wieder genesen. Dabei steht das persönliche Gespräch im Vordergrund, nicht das Verschreiben von Medikamenten oder die Nutzung von Geräten.</p>
+		<p>Bei uns bekommen Sie die medizinisch notwendige Behandlung, nichts Überflüssiges.<br>
+		Auch bei Impfungen und Vorsorgeuntersuchungen sind wir für Sie da.</p>
+		<p><a href="kontakt.html">Ruf ungeniert an</a> oder <a href="kontakt.html">schreibe uns eine Mail</a>.</p>
+	</div>
+	</div><!-- schließt #container-div -->
 </body>
-
 </html>
