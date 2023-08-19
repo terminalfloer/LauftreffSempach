@@ -21,11 +21,21 @@
                 <li><a href="termine.html">TERMINE</a></li>
                 <li><a href="team.html">TEAM</a></li>
                 <li><a href="kontakt.html">KONTAKT & IMPRESSUM</a></li>
-                <li><a href="current">GÄSTEBUCH</li>
+                <li><a href="gaestebuch.html">GÄSTEBUCH</a></li>
             </ul>
         </div>
         <div id="inhalt">
             <h2>Gästebuch</h2>
+            
+            <form id="guestbook-form" action="submit_guestbook.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="message">Nachricht:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Eintrag abschicken</button>
+            </form>
         </div>
     </div><!-- schließt #container-div -->
 </body>
