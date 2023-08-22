@@ -20,3 +20,17 @@ body {
 #menu a {
     display: block;
 }
+
+#guestbook-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+#guestbook-form label,
+#guestbook-form input,
+#guestbook-form textarea,
+#guestbook-form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
