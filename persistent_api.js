@@ -10,13 +10,13 @@ mongoose.connect(mongoDBConnection, {
   useUnifiedTopology: true,
 });
 
-const UserSchema = new mongoose.Schema({
-  id: Number,
-  username: String,
-  active: Boolean,
+// Gästebuch-Eintragsschema
+const guestbookEntrySchema = new mongoose.Schema({
+  name: String,
+  message: String,
 });
 
-const User = mongoose.model("User", UserSchema);
+const GuestbookEntry = mongoose.model("GuestbookEntry", guestbookEntrySchema);
 
 const app = express();
 app.use(express.json());
@@ -28,6 +28,19 @@ app.use((req, res, next) => {
   );
   next();
 });
+
+// Route to handle form submissions
+app.post("/submit", async (req, res) => {
+  const name = req.body.name;
+  const message = req.body.message;
+
+  // Speichere die Daten in der MongoDB
+  const newEntry = new GuestbookEntry({ name, message });
+  await newEntry.save();
+
+  res.redirect("/gaestebuch.html"); // Leite den Benutzer zurück zur Gästebuchseite
+});
+
 
 app.get("/users", async (req, res) => {
   const allUsers = await User.find();
