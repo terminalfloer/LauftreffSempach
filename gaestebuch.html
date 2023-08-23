@@ -10,6 +10,42 @@
     <link rel="icon" href="bilder/sun.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <link rel="stylesheet" type="text/css" media="screen and (max-width: 630px)" href="responsive.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const guestbookForm = document.getElementById("guestbook-form");
+            const guestbookEntries = document.getElementById("guestbook-entries");
+    
+            guestbookForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                
+                const nameInput = document.getElementById("name");
+                const messageInput = document.getElementById("message");
+                
+                const name = nameInput.value;
+                const message = messageInput.value;
+                
+                // Erstelle ein neues Element, um den Eintrag anzuzeigen
+                const entryElement = document.createElement("div");
+                entryElement.classList.add("entry");
+                
+                const nameElement = document.createElement("p");
+                nameElement.textContent = `Name: ${name}`;
+                
+                const messageElement = document.createElement("p");
+                messageElement.textContent = `Nachricht: ${message}`;
+                
+                entryElement.appendChild(nameElement);
+                entryElement.appendChild(messageElement);
+                
+                // Füge den Eintrag dem Container hinzu
+                guestbookEntries.appendChild(entryElement);
+                
+                // Leere die Formularfelder
+                nameInput.value = "";
+                messageInput.value = "";
+            });
+        });
+    </script>    
 </head>
 
 <body>
@@ -42,6 +78,9 @@
                 <button type="submit">Eintrag abschicken</button>
             </form>
         </div>
+        <div id="guestbook-entries">
+            <!-- Hier werden die Gästebuch-Einträge eingefügt -->
+        </div>        
     </div><!-- schließt #container-div -->
 </body>
 
