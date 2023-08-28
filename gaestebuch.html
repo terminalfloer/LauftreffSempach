@@ -11,41 +11,64 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <link rel="stylesheet" type="text/css" media="screen and (max-width: 630px)" href="responsive.css">
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", async () => {
             const guestbookForm = document.getElementById("guestbook-form");
             const guestbookEntries = document.getElementById("guestbook-entries");
-    
-            guestbookForm.addEventListener("submit", (e) => {
+
+            const allEntries = async () => {
+                // API Stuff
+                const response = await fetch("http://localhost:3000/guestbookentries");
+                const entries = await response.json(); // Correct variable name 'entries'
+                // UI stuff
+                guestbookEntries.innerHTML = "";
+                for (const entry of entries) {
+                    // Erstelle ein neues Element, um den Eintrag anzuzeigen
+                    const entryElement = document.createElement("div");
+                    entryElement.classList.add("entry");
+
+                    const nameElement = document.createElement("p");
+                    nameElement.textContent = `Name: ${entry.name}`;
+
+                    const messageElement = document.createElement("p");
+                    messageElement.textContent = `Nachricht: ${entry.message}`;
+
+                    entryElement.appendChild(nameElement);
+                    entryElement.appendChild(messageElement);
+
+                    // Füge den Eintrag dem Container hinzu
+                    guestbookEntries.appendChild(entryElement);
+                }
+            };
+
+            // Rufe die Methode allEntries auf, um die Einträge zu laden und anzuzeigen
+            await allEntries();
+
+            guestbookForm.addEventListener("submit", async (e) => {
                 e.preventDefault();
-                
+
                 const nameInput = document.getElementById("name");
                 const messageInput = document.getElementById("message");
-                
+
                 const name = nameInput.value;
                 const message = messageInput.value;
-                
-                // Erstelle ein neues Element, um den Eintrag anzuzeigen
-                const entryElement = document.createElement("div");
-                entryElement.classList.add("entry");
-                
-                const nameElement = document.createElement("p");
-                nameElement.textContent = `Name: ${name}`;
-                
-                const messageElement = document.createElement("p");
-                messageElement.textContent = `Nachricht: ${message}`;
-                
-                entryElement.appendChild(nameElement);
-                entryElement.appendChild(messageElement);
-                
-                // Füge den Eintrag dem Container hinzu
-                guestbookEntries.appendChild(entryElement);
-                
+
+                await fetch("http://localhost:3000/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ name, message }),
+                });
+
                 // Leere die Formularfelder
                 nameInput.value = "";
                 messageInput.value = "";
+
+                // Rufe die Methode allEntries auf, um die Einträge zu laden und anzuzeigen
+                await allEntries();
             });
         });
-    </script>    
+    </script>
 </head>
 
 <body>
@@ -80,7 +103,7 @@
         </div>
         <div id="guestbook-entries">
             <!-- Hier werden die Gästebuch-Einträge eingefügt -->
-        </div>        
+        </div>
     </div><!-- schließt #container-div -->
 </body>
 

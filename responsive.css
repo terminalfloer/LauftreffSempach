@@ -34,3 +34,8 @@ body {
     width: 100%;
     margin-bottom: 10px;
 }
+
+#guestbook-entries {
+    margin-top: 15px; /* Fügt einen oberen Abstand von 15px hinzu */
+    /* ... Weitere Eigenschaften ... */
+}

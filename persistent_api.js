@@ -37,41 +37,12 @@ app.post("/submit", async (req, res) => {
   // Speichere die Daten in der MongoDB
   const newEntry = new GuestbookEntry({ name, message });
   await newEntry.save();
-
-  res.redirect("/gaestebuch.html"); // Leite den Benutzer zurück zur Gästebuchseite
+  res.status(201).send()
 });
 
-
-app.get("/users", async (req, res) => {
-  const allUsers = await User.find();
-  return res.json(allUsers);
-});
-
-app.get("/users/:id", async (req, res) => {
-  const id = parseInt(req.params.id);
-  const foundUser = await User.findOne({ id });
-  if (!foundUser) {
-    return res.status(404).send();
-  }
-  return res.json(foundUser);
-});
-
-app.post("/users", async (req, res) => {
-  const newUser = new User({ ...req.body });
-  await newUser.save();
-  return res.status(201).send();
-});
-
-app.put("/users/:id", async (req, res) => {
-  const id = parseInt(req.params.id);
-  await User.updateOne({ id }, req.body);
-  return res.status(200).send();
-});
-
-app.delete("/users/:id", async (req, res) => {
-  const id = parseInt(req.params.id);
-  await User.findOne({ id }).deleteOne();
-  return res.status(204).send();
+app.get("/guestbookentries", async (req, res) => {
+  const allEntries = await GuestbookEntry.find();
+  return res.json(allEntries);
 });
 
 const PORT = process.env.PORT || 3000;

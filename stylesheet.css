@@ -191,3 +191,8 @@ a:active {
     font-size: 0.8em;
     color: #999;
 }
+
+#guestbook-entries {
+    margin-top: 15px; /* Fügt einen oberen Abstand von 15px hinzu */
+    /* ... Weitere Eigenschaften ... */
+}
