@@ -10,4 +10,4 @@ Go to localhost:3000
 ```
 
 ## Notizen
-leer
+Coole Sache!

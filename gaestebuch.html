@@ -18,7 +18,7 @@
             const allEntries = async () => {
                 // API Stuff
                 const response = await fetch("http://localhost:3000/guestbookentries");
-                const entries = await response.json(); // Correct variable name 'entries'
+                const entries = await response.json(); 
                 // UI stuff
                 guestbookEntries.innerHTML = "";
                 for (const entry of entries) {

@@ -29,7 +29,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// Route to handle form submissions
+// Route zur Verarbeitung von Formularübermittlungen
 app.post("/submit", async (req, res) => {
   const name = req.body.name;
   const message = req.body.message;
