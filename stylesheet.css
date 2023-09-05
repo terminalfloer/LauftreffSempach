@@ -1,24 +1,24 @@
 /* Logo */
 #logo {
-    text-align: center;
-    /* Zentriert den Inhalt horizontal */
-    background-color: #ffffff;
-    padding: 10px 0;
+	text-align: center;
+	/* Zentriert den Inhalt horizontal */
+	background-color: #ffffff;
+	padding: 10px 0;
 }
 
 .logo-image {
-    max-width: 500px;
-    /* Begrenzt die maximale Breite des Bildes */
-    display: block;
-    /* Entfernt den Abstand unten, der bei Inline-Elementen auftreten kann */
-    margin: 0 auto;
-    /* Zentriert das Bild horizontal innerhalb des Containers */
+	max-width: 500px;
+	/* Begrenzt die maximale Breite des Bildes */
+	display: block;
+	/* Entfernt den Abstand unten, der bei Inline-Elementen auftreten kann */
+	margin: 0 auto;
+	/* Zentriert das Bild horizontal innerhalb des Containers */
 }
 
 body {
 	margin: 0px;
 	padding: 8px;
-	
+
 	font-family: "Helvetica Neue", "Helvetica", "Arial", "sans serif";
 	font-size: medium;
 	color: #555555;
@@ -83,7 +83,7 @@ a:active {
 	margin: 0px 0px 15px 0px;
 	padding: 0px 0px 0px 15px;
 	overflow: hidden;
-	
+
 	background-color: #366BF4;
 	-moz-box-shadow: 2px 2px 2px 0px #515151;
 	-webkit-box-shadow: 2px 2px 2px 0px #515151;
@@ -93,19 +93,19 @@ a:active {
 #kopfleiste h1 {
 	margin: 0px;
 	padding: 0px;
-	
+
 	font-size: 220%;
 	line-height: 80px;
 	color: #FAF9F8;
 }
 
 #menu {
-	float: left;	
+	float: left;
 	width: auto;
 	height: auto;
 	margin: 0px 15px 0px 0px;
 	padding: 10px;
-	
+
 	background-color: #FAF9F8;
 	-moz-box-shadow: 2px 2px 2px 0px #515151;
 	-webkit-box-shadow: 2px 2px 2px 0px #515151;
@@ -118,7 +118,7 @@ a:active {
 
 #menu ul {
 	padding: 0px;
-	
+
 	list-style-type: none;
 }
 
@@ -137,9 +137,10 @@ a:active {
 #inhalt {
 	width: auto;
 	height: auto;
-	overflow: hidden; /*Damit das Layout mit float funktioniert*/
+	overflow: hidden;
+	/*Damit das Layout mit float funktioniert*/
 	padding: 10px 15px 10px 15px;
-	
+
 	background-color: #FAF9F8;
 	-moz-box-shadow: 2px 2px 2px 0px #515151;
 	-webkit-box-shadow: 2px 2px 2px 0px #515151;
@@ -163,36 +164,37 @@ a:active {
 }
 
 #guestbook-form {
-    max-width: 400px;
-    margin: 0 auto;
+	max-width: 400px;
+	margin: 0 auto;
 }
 
 #guestbook-form label,
 #guestbook-form input,
 #guestbook-form textarea,
 #guestbook-form button {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
 }
 
 .entry {
-    background-color: white;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
+	background-color: white;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
 }
 
 .entry p {
-    margin: 5px 0;
+	margin: 5px 0;
 }
 
 .entry .date {
-    font-size: 0.8em;
-    color: #999;
+	font-size: 0.8em;
+	color: #999;
 }
 
 #guestbook-entries {
-    margin-top: 15px; /* Fügt einen oberen Abstand von 15px hinzu */
-    /* ... Weitere Eigenschaften ... */
+	margin-top: 15px;
+	/* Fügt einen oberen Abstand von 15px hinzu */
+	/* ... Weitere Eigenschaften ... */
 }
